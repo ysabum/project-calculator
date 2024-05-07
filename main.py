@@ -5,7 +5,7 @@ def main():
     application = QApplication([])
     window = Logic()
     window.setWindowTitle('Calculator')
-#     window.setWindowIcon(QtGui.QIcon(":/ATM_graphics/atm_cash-point.png"))
+    window.setWindowIcon(QtGui.QIcon(":/calculator/calculator.png"))
     window.show()
     application.exec()
     sys.exit()

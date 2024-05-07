@@ -98,6 +98,7 @@ def multiply(x: str, y: str) -> float:
         x = float(x)
     else:
         x = int(x)
+        
     if '.' in y:
         y = float(y)
     else:
@@ -115,32 +116,81 @@ def circle(radius: str) -> float:
     radius -- Radius of a circle.
     '''
     
-    radius = float(radius)
-    if radius <= 0:
+    if '.' in radius:
+        radius = float(radius)
+    else:
+        radius = int(radius)
+        
+    if radius < 0:
         raise TypeError
     else:
         return pi * radius ** 2
 
 
-def square(length):
-    length = float(length)
-    if length <= 0:
+def square(length: str) -> float:
+    '''
+    Method to get the area of a square.
+    
+    Parameters:
+    length -- Length of one side of a square.
+    '''
+    
+    if '.' in length:
+        length = float(length)
+    else:
+        length = int(length)
+    
+    if length < 0:
         raise TypeError
     else:
         return length ** 2
+    
 
-
-def rectangle(width, height):
-    width, height = float(width), float(height)
-    if width <= 0 or height <= 0:
+def rectangle(width: str, height: str) -> float:
+    '''
+    Method to get the area of a rectangle.
+    
+    Parameters:
+    width -- Width of the rectangle.
+    height -- Height of the rectangle.
+    '''
+    
+    if '.' in width:
+        width = float(width)
+    else:
+        width = int(width)
+        
+    if '.' in height:
+        height = float(height)
+    else:
+        height = int(height)
+        
+    if width < 0 or height < 0:
         raise TypeError
     else:
         return width * height
 
 
-def triangle(base, height):
-    base, height = float(base), float(height)
-    if base <= 0 or height <= 0:
+def triangle(base: str, height: str) -> float:
+    '''
+    Method to get the area of a triangle.
+    
+    Parameters:
+    base -- Base of the triangle.
+    height -- Height of the triangle.
+    '''
+    
+    if '.' in base:
+        base = float(base)
+    else:
+        base = int(base)
+        
+    if '.' in height:
+        height = float(height)
+    else:
+        height = int(height)
+    
+    if base < 0 or height < 0:
         raise TypeError
     else:
         return base * height / 2
